@@ -18,6 +18,7 @@ public class BogoSort{
     while (!isSorted(array)) {  
       //Generate Random Sorting  
       for (int i = 0; i < array.length; i++){  
+        // 0 <= randomPosition <= array.length
         int randomPosition = generator.nextInt(array.length);  
         //Swap
         Swap(array,i,randomPosition); 
