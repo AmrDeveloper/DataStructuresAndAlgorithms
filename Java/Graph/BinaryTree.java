@@ -1,5 +1,5 @@
 
-package Graph;
+package Algorithms.Graph;
 
 //Binary Tree is tree of node with some rules
 //root node must bigger than right son 
@@ -17,10 +17,9 @@ public class BinaryTree {
         //right son node
         private node right;
         //Node Constructor
-        node(int value , node left , node right){
+        node(int value ){
             this.value = value;
-            this.left = left;
-            this.right = right;
+
         }
     }
     
@@ -37,30 +36,22 @@ public class BinaryTree {
         if(root == null){
             return ;
         }
-        //newNode Smaller than explor value
-        if(root.value > newNode.value){
-            //no left son
-            if(root.left == null)
-            {
-                //add to left son
-                root.left = newNode;
+        //newnode bigger than explor
+        if(newNode.value > explor.value){
+            if(explor.right == null){
+                explor.right = newNode;
             }
-            else
-
-            {
-                add(newNode , explor.left);
+            else{
+                add(newNode,explor.right);
             }
         }
-        //newNode Bigger than explor value
-        if(root.value < newNode.value){
-            if(root.left == null)
-            {
-                //add to right son
-                root.right = newNode;
+        //newnode smaller than explor
+        if(newNode.value < explor.value){
+            if(explor.left == null){
+                explor.left = newNode;
             }
-            else
-            {
-                add(newNode , explor.right);
+            else{
+                add(newNode,explor.left);
             }
         }
     }
@@ -84,4 +75,6 @@ public class BinaryTree {
         }
         return false;
     }
+    
+    
 }
