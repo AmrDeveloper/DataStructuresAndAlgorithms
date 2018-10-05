@@ -7,9 +7,9 @@ import java.util.List;
  * @author jeremyz23
  */
  
-public class ExampleRadixSort {
+public class RadixSort {
 
-  public static void radixsort(int[] input) {
+  public static void sort(int[] input) {
  
           List<Integer>[] buckets = new ArrayList[10];
           for (int i = 0; i < buckets.length; i++) {
