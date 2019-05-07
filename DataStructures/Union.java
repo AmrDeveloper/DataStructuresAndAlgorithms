@@ -15,7 +15,7 @@ public class Union<K, V> {
     public void add(K key, V value) {
         valuesMap.put(key, value);
         if (lastKeyChanged != null) {
-            valuesMap.put(lastKeyChanged, null);
+            valuesMap.remove(lastKeyChanged);
         }
         lastKeyChanged = key;
     }
